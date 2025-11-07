@@ -6,8 +6,8 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Swiss Design Studio",
-  description: "A modern design studio inspired by Swiss Design principles",
+  title: "Fortune Business Solutions",
+  description: "Leading provider of staffing solutions, company formation services, and event management in Oman, Bahrain, and India",
     generator: 'v0.app'
 }
 

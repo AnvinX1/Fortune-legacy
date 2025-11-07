@@ -2,7 +2,7 @@
 
 > **Your Trusted Partner for Staffing, Business Formation & Event Management**
 
-A modern, responsive corporate website built with Next.js 14, TypeScript, and Swiss Design principles. Fortune Business Solutions specializes in staffing solutions, company formation services (Fortune PRO), and comprehensive event management across Oman, Bahrain, and India.
+A modern, responsive corporate website built with Next.js 14, TypeScript, and clean design principles. Fortune Business Solutions specializes in staffing solutions, company formation services (Fortune PRO), and comprehensive event management across Oman, Bahrain, and India.
 
 ---
 
@@ -19,7 +19,7 @@ The website features the iconic Fortune logo animation that plays on page load:
 ## ✨ Features
 
 ### 🎨 Design & User Experience
-- **Swiss Design Aesthetic** - Clean typography, bold layouts, and minimal color palette
+- **Modern Design Aesthetic** - Clean typography, bold layouts, and professional color palette
 - **Fully Responsive** - Optimized for mobile, tablet, and desktop devices
 - **Smooth Animations** - Page transitions, hover effects, and staggered content reveals
 - **Hamburger Navigation** - Mobile-friendly animated menu with smooth transitions
@@ -456,7 +456,7 @@ This is proprietary software developed for Fortune Business Solutions. Unauthori
 
 ## 🙏 Acknowledgments
 
-- **Design Inspiration**: Swiss Design Movement principles
+- **Design Inspiration**: Modern minimalist design principles
 - **UI Components**: shadcn/ui component library
 - **Icons**: Lucide Icons
 - **Hosting**: Vercel Platform
