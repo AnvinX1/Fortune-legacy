@@ -1,0 +1,200 @@
+FORTUNE BUSINESS SOLUTIONS - API CONFIGURATION GUIDE
+====================================================
+
+This document contains all the required API keys and configuration steps needed to run the Fortune Business Solutions website in production.
+
+====================================================
+REQUIRED ENVIRONMENT VARIABLES
+====================================================
+
+1. RESEND_API_KEY (Email Service)
+   --------------------------------
+   Purpose: Send contact form submissions to ceo.fortune@outlook.com
+   
+   Setup Instructions:
+   a) Go to https://resend.com/
+   b) Sign up for a free account (allows 100 emails/day, 3,000/month)
+   c) Verify your domain OR use the testing domain provided by Resend
+   d) Go to API Keys section in dashboard
+   e) Create a new API key
+   f) Copy the API key (starts with "re_")
+   
+   Add to Vercel:
+   - Go to your Vercel project settings
+   - Navigate to Environment Variables
+   - Add: RESEND_API_KEY = re_xxxxxxxxxxxxx
+   - Set for Production, Preview, and Development environments
+   
+   Notes:
+   - The contact form will work in "simulation mode" without this key for testing
+   - For production, you MUST add this key to receive actual emails
+   - Emails are sent to: ceo.fortune@outlook.com
+   
+   Testing:
+   - Test the contact form after deployment
+   - Check spam folder if emails don't arrive
+   - Verify sender domain is properly configured in Resend
+
+
+====================================================
+OPTIONAL ENHANCEMENTS (Future Implementation)
+====================================================
+
+2. Google Maps API (Currently using iframe embed)
+   -----------------------------------------------
+   Current Status: Using Google Maps iframe embed (free, no API key needed)
+   Location: Ruwi, Muscat, Oman
+   
+   If you want advanced map features:
+   a) Go to https://console.cloud.google.com/
+   b) Create a new project
+   c) Enable Google Maps JavaScript API
+   d) Create API credentials
+   e) Add: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY = your_api_key
+   
+   Note: Current iframe implementation is sufficient for most needs
+
+
+3. Instagram API (For Social Page)
+   ----------------------------------
+   Current Status: Links to @fortune_oman Instagram profile
+   
+   If you want to fetch live Instagram posts:
+   a) Go to https://developers.facebook.com/
+   b) Create a Facebook App
+   c) Set up Instagram Basic Display API
+   d) Add: INSTAGRAM_ACCESS_TOKEN = your_token
+   
+   Note: Manual updates recommended for curated content
+
+
+====================================================
+DEPLOYMENT CHECKLIST
+====================================================
+
+✅ Pre-Deployment:
+   □ Add RESEND_API_KEY to Vercel environment variables
+   □ Update company contact information if needed
+   □ Test contact form in development mode
+   □ Verify all navigation links work correctly
+   □ Check responsive design on mobile devices
+   □ Test video playback across browsers
+   □ Verify Instagram link: @fortune_oman
+
+✅ Post-Deployment:
+   □ Test contact form on live site
+   □ Verify emails arrive at ceo.fortune@outlook.com
+   □ Check all pages load correctly
+   □ Test navigation on mobile devices
+   □ Verify Google Maps embed loads
+   □ Check social media links work
+   □ Test form validation
+   □ Confirm success animations work
+
+✅ Performance Optimization:
+   □ Enable Vercel Analytics (recommended)
+   □ Monitor Core Web Vitals
+   □ Check image loading performance
+   □ Test video playback on different connections
+
+
+====================================================
+API ENDPOINTS IN THIS PROJECT
+====================================================
+
+1. POST /api/send-email
+   Purpose: Handle contact form submissions
+   Required Fields: name, email, service, message
+   Optional Fields: phone, company
+   Response: JSON with success/error status
+   Email Recipient: ceo.fortune@outlook.com
+
+
+====================================================
+THIRD-PARTY SERVICES USED
+====================================================
+
+1. Vercel (Hosting & Deployment)
+   - Website hosting
+   - Automatic deployments from GitHub
+   - Environment variable management
+   - Analytics (optional)
+
+2. Resend (Email Service)
+   - Contact form email delivery
+   - Free tier: 100 emails/day
+   - Requires API key for production
+
+3. Google Maps (Embedded Map)
+   - Location display on contact page
+   - Free iframe embed (no API key required)
+   - Shows Ruwi, Muscat, Oman location
+
+
+====================================================
+CONTACT INFORMATION
+====================================================
+
+Company: Fortune Business Solutions
+Email: ceo.fortune@outlook.com
+Phone: +968 91724281
+Location: Ruwi, Muscat, Sultanate of Oman
+Instagram: @fortune_oman
+Website: [Your Vercel deployment URL]
+
+
+====================================================
+SUPPORT & TROUBLESHOOTING
+====================================================
+
+Contact Form Issues:
+- Verify RESEND_API_KEY is set correctly
+- Check Vercel function logs for errors
+- Ensure email recipient is correct
+- Test with simulation mode first
+
+Map Not Loading:
+- Check internet connection
+- Verify iframe URL is correct
+- Test in different browsers
+- Clear browser cache
+
+Video Not Playing:
+- Verify fortune-logo.mp4 is in public folder
+- Check video codec compatibility
+- Test on different browsers
+- Ensure video file is not corrupted
+
+Navigation Issues:
+- Clear browser cache
+- Check scroll-to-top component is working
+- Verify all route paths are correct
+- Test on different devices
+
+
+====================================================
+MAINTENANCE NOTES
+====================================================
+
+Regular Tasks:
+- Monitor contact form submissions
+- Update client logos as needed
+- Refresh service offerings
+- Update testimonials and stats
+- Check for broken links monthly
+- Review and respond to form submissions
+
+Security:
+- Keep dependencies updated
+- Monitor Vercel security alerts
+- Rotate API keys periodically
+- Review form submissions for spam
+- Keep Node.js version current
+
+
+====================================================
+END OF CONFIGURATION GUIDE
+====================================================
+
+Last Updated: January 2025
+Version: 1.0

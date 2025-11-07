@@ -1,0 +1,27 @@
+import type React from "react"
+import "./globals.css"
+import { Inter } from "next/font/google"
+import { ScrollToTop } from "@/components/scroll-to-top"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata = {
+  title: "Swiss Design Studio",
+  description: "A modern design studio inspired by Swiss Design principles",
+    generator: 'v0.app'
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <ScrollToTop />
+        {children}
+      </body>
+    </html>
+  )
+}
