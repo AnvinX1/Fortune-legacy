@@ -1,218 +1,229 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Navigation from "@/components/navigation"
-
-const productCategories = [
-  {
-    name: "Technology Gifts",
-    description: "Premium tech items including wireless chargers, power banks, USB drives, earbuds, and speakers",
-    items: ["Wireless Chargers", "Power Banks", "USB Flash Drives", "Bluetooth Speakers", "Wireless Earbuds"],
-  },
-  {
-    name: "Eco-Friendly Products",
-    description: "Sustainable bamboo notebooks, pens, eco water bottles, and reusable tote bags",
-    items: ["Bamboo Notebooks", "Bamboo Pen Sets", "Eco Water Bottles", "Sustainable Totes"],
-  },
-  {
-    name: "Drinkware & Stationery",
-    description: "Stainless steel bottles, ceramic mugs, insulated tumblers, notebooks, and premium pens",
-    items: ["Stainless Steel Bottles", "Ceramic Mugs", "Notebooks", "Premium Pens", "Desk Accessories"],
-  },
-  {
-    name: "Corporate Gift Sets",
-    description: "Curated executive gift boxes, premium pen sets, travel kits, and branded accessory bundles",
-    items: ["Executive Gift Sets", "Tech Gift Boxes", "Premium Pen Sets", "Travel Gift Kits"],
-  },
-]
+import Footer from "@/components/footer"
+import CTA from "@/components/cta"
+import Image from "next/image"
 
 export default function ProductsPage() {
+  const productCategories = [
+    {
+      id: "01",
+      name: "TECHNOLOGY GIFTS",
+      description: "Premium tech items including wireless chargers, power banks, USB drives, earbuds, and speakers.",
+      image: "/images/product-tech.png",
+      items: ["Wireless Chargers", "Power Banks", "USB Flash Drives", "Bluetooth Speakers"]
+    },
+    {
+      id: "02",
+      name: "ECO-FRIENDLY",
+      description: "Sustainable bamboo notebooks, pens, eco water bottles, and reusable tote bags.",
+      image: "/images/product-eco.png",
+      items: ["Bamboo Notebooks", "Bamboo Pen Sets", "Eco Water Bottles", "Sustainable Totes"]
+    },
+    {
+      id: "03",
+      name: "DRINKWARE",
+      description: "Stainless steel bottles, ceramic mugs, insulated tumblers, notebooks, and premium pens.",
+      image: "/images/product-drinkware.png",
+      items: ["Stainless Steel Bottles", "Ceramic Mugs", "Notebooks", "Premium Pens"]
+    },
+    {
+      id: "04",
+      name: "GIFT SETS",
+      description: "Curated executive gift boxes, premium pen sets, travel kits, and branded accessory bundles.",
+      image: "/images/product-gift-sets.png",
+      items: ["Executive Gift Sets", "Tech Gift Boxes", "Premium Pen Sets", "Travel Gift Kits"]
+    },
+  ]
+
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white text-neutral-900">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-12 md:col-span-8 animate-slideInLeft">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none mb-6">
-              PREMIUM
-              <br />
-              PRODUCTS
-            </h1>
-            <p className="text-xl max-w-2xl">
-              Discover our curated collection of corporate gifts and promotional products, all customizable with your
-              brand identity.
-            </p>
-          </div>
-          <div className="col-span-12 md:col-span-4 flex items-center justify-center animate-slideInRight">
-            <div className="w-48 h-48 border-4 border-blue-600 relative">
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-black"></div>
+      <section className="relative pt-32 pb-20 px-4 md:px-8 overflow-hidden">
+        {/* Ambient Background */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-slideInLeft">
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-blue-500/20 rounded-full bg-blue-500/5 backdrop-blur-sm mb-8">
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                <span className="text-xs sm:text-sm uppercase tracking-widest font-bold text-blue-600">
+                  Corporate Gifting
+                </span>
+              </div>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 text-neutral-900">
+                PREMIUM
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  PRODUCTS
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl text-neutral-600 max-w-xl leading-relaxed mb-8">
+                Discover our curated collection of corporate gifts and promotional products, all customizable with your brand identity.
+              </p>
+            </div>
+            <div className="relative animate-slideInRight">
+              <div className="relative aspect-square max-w-md mx-auto lg:ml-auto">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
+                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
+                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90">
+                    <source src="/images/fortunevid.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        {/* End of added grid layout */}
       </section>
 
-      {/* Product Categories Grid - matching social page card style */}
-      <section className="py-20 px-4 md:px-8">
+      {/* Product Categories Grid */}
+      <section className="py-20 sm:py-24 px-4 md:px-8 bg-white relative">
         <div className="container mx-auto">
-          <h2 className="text-6xl font-bold tracking-tighter mb-12 animate-fadeIn">OUR CATEGORIES</h2>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-6">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+              OUR
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                COLLECTION
+              </span>
+            </h2>
+            <p className="text-neutral-600 max-w-md text-sm sm:text-base md:text-lg leading-relaxed text-right md:text-left">
+              From eco-friendly options to premium tech gadgets, we have the perfect gifts for your clients and team.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {productCategories.map((category, index) => (
-              <div
-                key={index}
-                className={`group border border-black p-12 hover:bg-blue-600 hover:text-white transition-all duration-300 animate-slideUp animate-delay-${(index + 1) * 100}`}
+            {productCategories.map((category) => (
+              <Link
+                key={category.id}
+                href="/contact"
+                className="group relative h-[500px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
               >
-                <div className="text-6xl font-bold mb-4">{String(index + 1).padStart(2, "0")}</div>
-                <h3 className="text-3xl font-bold mb-4 tracking-tighter">{category.name}</h3>
-                <p className="text-lg mb-6">{category.description}</p>
-
-                <div className="mb-8">
-                  <h4 className="text-sm uppercase tracking-widest mb-3 opacity-70">Available Items:</h4>
-                  <ul className="space-y-2">
-                    {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center text-sm">
-                        <span className="mr-3">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="absolute inset-0">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
 
-                <Link href="/contact" className="inline-flex items-center text-sm uppercase tracking-widest">
-                  Request Quote <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
+                <div className="relative h-full p-8 flex flex-col justify-between">
+                  <div className="flex justify-between items-start">
+                    <span className="text-5xl font-bold text-neutral-200 group-hover:text-neutral-300 transition-colors duration-500 drop-shadow-sm">
+                      {category.id}
+                    </span>
+                    <div className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                      <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-md p-6 rounded-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 border border-neutral-100 shadow-sm">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-neutral-900">
+                      {category.name}
+                    </h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {category.description}
+                    </p>
+                    <ul className="grid grid-cols-2 gap-2">
+                      {category.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-xs text-neutral-500">
+                          <CheckCircle2 className="w-3 h-3 text-blue-600 flex-shrink-0" />
+                          <span className="truncate">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Section - matching social page numbered list style */}
-      <section className="py-20 px-4 md:px-8 bg-white">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-7 animate-slideInLeft">
-              <h2 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6">WHY CHOOSE US</h2>
-              <p className="text-xl mb-6">
+      {/* Why Choose Us Section */}
+      <section className="py-20 sm:py-24 px-4 md:px-8 bg-neutral-50 text-neutral-900 relative overflow-hidden">
+        {/* Background Glow */}
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
+
+        <div className="container mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 animate-slideInLeft">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.9]">
+                WHY
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  CHOOSE US
+                </span>
+              </h2>
+              <p className="text-lg sm:text-xl text-neutral-600 mb-10 leading-relaxed max-w-2xl">
                 Premium quality products with full customization to perfectly represent your brand.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-4 p-6 rounded-xl bg-white border border-neutral-200 hover:border-blue-500/30 transition-all duration-300 shadow-sm hover:shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-600 font-bold text-xl">
                     1
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Custom Branding</h3>
-                    <p className="text-neutral-600">
+                    <h3 className="font-bold text-xl mb-2 text-neutral-900">Custom Branding</h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed">
                       Full customization with your logo, colors, and brand identity on all products.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+
+                <div className="flex flex-col gap-4 p-6 rounded-xl bg-white border border-neutral-200 hover:border-blue-500/30 transition-all duration-300 shadow-sm hover:shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-purple-600/10 flex items-center justify-center text-purple-600 font-bold text-xl">
                     2
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Premium Quality</h3>
-                    <p className="text-neutral-600">
+                    <h3 className="font-bold text-xl mb-2 text-neutral-900">Premium Quality</h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed">
                       High-quality materials and craftsmanship that reflect your brand standards.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+
+                <div className="flex flex-col gap-4 p-6 rounded-xl bg-white border border-neutral-200 hover:border-blue-500/30 transition-all duration-300 shadow-sm hover:shadow-lg">
+                  <div className="w-12 h-12 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-600 font-bold text-xl">
                     3
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Bulk Orders</h3>
-                    <p className="text-neutral-600">
+                    <h3 className="font-bold text-xl mb-2 text-neutral-900">Bulk Orders</h3>
+                    <p className="text-neutral-600 text-sm leading-relaxed">
                       Competitive pricing for large quantities with reliable delivery timelines.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 flex items-center justify-center animate-slideInRight">
-              <div className="relative w-full aspect-square bg-black overflow-hidden">
-                <video className="w-full h-full object-cover" autoPlay muted playsInline src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fortune%20logo-vErfzRfbPavpWQMDBQbdr6VnD6agO8.mp4">
-                  Your browser does not support the video tag.
-                </video>
+
+            <div className="lg:col-span-5 flex items-center justify-center animate-slideInRight">
+              <div className="relative w-full max-w-md aspect-square">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
+                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
+                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90">
+                    <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fortune%20logo-vErfzRfbPavpWQMDBQbdr6VnD6agO8.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - matching social page CTA style */}
-      <section className="py-20 px-4 md:px-8 bg-blue-600 text-white animate-fadeIn">
-        <div className="container mx-auto text-center">
-          <h2 className="text-6xl font-bold tracking-tighter mb-6">READY TO ORDER?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Need large quantities or have specific customization requirements? Contact us for personalized quotes and
-            custom branding options.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-8 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
-          >
-            Get a Quote
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+      <CTA />
 
-      {/* Footer */}
-      <footer className="py-12 px-4 md:px-8 bg-black text-white">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-xl font-bold tracking-tighter mb-4">FORTUNE</div>
-              <p className="text-sm text-neutral-400">Business Solutions in Muscat, Oman</p>
-            </div>
-            <div>
-              <h4 className="text-sm uppercase tracking-widest mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <Link href="/about" className="block text-sm text-neutral-400 hover:text-white">
-                  About
-                </Link>
-                <Link href="/services" className="block text-sm text-neutral-400 hover:text-white">
-                  Services
-                </Link>
-                <Link href="/products" className="block text-sm text-neutral-400 hover:text-white">
-                  Products
-                </Link>
-                <Link href="/contact" className="block text-sm text-neutral-400 hover:text-white">
-                  Contact
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-sm uppercase tracking-widest mb-4">Contact</h4>
-              <div className="space-y-2 text-sm text-neutral-400">
-                <p>Ruwi, Muscat, Oman</p>
-                <p>+968 91724281</p>
-                <p>ceo.fortune@outlook.com</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-sm uppercase tracking-widest mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-sm uppercase tracking-widest hover:text-blue-600 transition-colors">
-                  LinkedIn
-                </a>
-                <a href="#" className="text-sm uppercase tracking-widest hover:text-blue-600 transition-colors">
-                  Instagram
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-neutral-800 pt-8 text-center text-sm text-neutral-400">
-            © 2025 Fortune Business Solutions. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

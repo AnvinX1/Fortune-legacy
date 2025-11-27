@@ -1,13 +1,22 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const links = [
     { href: "/", label: "Home" },
@@ -19,9 +28,12 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b-2 border-black">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || isOpen ? "bg-white/80 backdrop-blur-md border-b border-neutral-200" : "bg-transparent border-transparent"
+        }`}
+    >
       <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
+        <Link href="/" className="text-xl font-bold tracking-tighter text-neutral-900">
           FORTUNE
         </Link>
 
@@ -31,9 +43,8 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm uppercase tracking-widest hover:text-blue-600 transition-colors ${
-                pathname === link.href ? "text-blue-600" : ""
-              }`}
+              className={`text-sm uppercase tracking-widest hover:text-blue-600 transition-colors ${pathname === link.href ? "text-blue-600 font-bold" : "text-neutral-600"
+                }`}
             >
               {link.label}
             </Link>
@@ -43,7 +54,7 @@ export default function Navigation() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden w-10 h-10 flex items-center justify-center border-2 border-black hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all"
+          className="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-neutral-100 transition-all text-neutral-900"
           aria-label="Toggle menu"
         >
           <div className={`transition-transform duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}>
@@ -54,29 +65,25 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white/95 backdrop-blur-xl border-b border-neutral-200 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
-        <div className="bg-white border-t-2 border-black">
-          <div className="container mx-auto px-4 py-6 space-y-4">
-            {links.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`block text-lg uppercase tracking-widest hover:text-blue-600 transition-all py-2 ${
-                  pathname === link.href ? "text-blue-600 font-bold" : ""
+        <div className="container mx-auto px-4 py-6 space-y-4">
+          {links.map((link, index) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={`block text-lg uppercase tracking-widest hover:text-blue-600 transition-all py-2 ${pathname === link.href ? "text-blue-600 font-bold" : "text-neutral-600"
                 } ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
-                style={{
-                  transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
-                  transitionDuration: "300ms",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+              style={{
+                transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
+                transitionDuration: "300ms",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
