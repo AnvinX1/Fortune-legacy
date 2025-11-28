@@ -3,7 +3,7 @@ import { ArrowRight, Star, Users, Award, Clock, Shield } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import CTA from "@/components/cta"
-import Image from "next/image"
+import ImageWithLoader from "@/components/image-with-loader"
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] text-neutral-900">
+              <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold tracking-tighter leading-[0.9] text-neutral-900">
                 FORTUNE
                 <br />
                 BUSINESS
@@ -100,134 +100,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries We Serve Section */}
-      <section className="py-20 sm:py-24 px-4 md:px-8 bg-neutral-50 text-neutral-900 relative">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-6">
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
-              INDUSTRIES
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                WE SERVE
-              </span>
-            </h2>
-            <p className="text-neutral-600 max-w-md text-sm sm:text-base md:text-lg leading-relaxed text-right md:text-left">
-              Tailored solutions for diverse sectors, driving efficiency and growth across the board.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Oil & Gas */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-oil-gas.png"
-                alt="Oil & Gas Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Users className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">OIL & GAS</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Comprehensive staffing and corporate gifting solutions for the energy sector.
-                </p>
-              </div>
-            </div>
-
-            {/* Government */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-government.png"
-                alt="Government Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Award className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">GOVERNMENT</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Supporting public sector organizations with tailored business solutions.
-                </p>
-              </div>
-            </div>
-
-            {/* Hospitality */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-hospitality.png"
-                alt="Hospitality Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Clock className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">HOSPITALITY</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Event management and premium products for hotels and restaurants.
-                </p>
-              </div>
-            </div>
-
-            {/* Banking */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-banking.png"
-                alt="Banking Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Shield className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">BANKING</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Executive staffing and corporate branding for financial institutions.
-                </p>
-              </div>
-            </div>
-
-            {/* Construction */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-construction.png"
-                alt="Construction Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Users className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">CONSTRUCTION</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Workforce solutions and safety equipment for construction companies.
-                </p>
-              </div>
-            </div>
-
-            {/* Retail */}
-            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
-              <Image
-                src="/images/industry-retail.png"
-                alt="Retail Industry"
-                fill
-                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-              <div className="relative h-full p-8 flex flex-col justify-end">
-                <Award className="w-10 h-10 text-blue-600 mb-6" />
-                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">RETAIL</h3>
-                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  Promotional products and staffing support for retail businesses.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="py-20 sm:py-24 px-4 md:px-8 bg-white text-neutral-900 relative overflow-hidden">
         {/* Ambient Background */}
@@ -238,7 +110,7 @@ export default function Home() {
 
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-6">
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.9]">
               OUR
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -257,7 +129,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-staffing.png"
                   alt="Staffing Solutions"
                   fill
@@ -289,7 +162,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-company-formation.png"
                   alt="Company Formation"
                   fill
@@ -321,7 +195,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-event-management.png"
                   alt="Event Management"
                   fill
@@ -353,7 +228,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-digital-signage.png"
                   alt="Digital Signage"
                   fill
@@ -385,7 +261,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-branding.png"
                   alt="Branding & Marketing"
                   fill
@@ -417,7 +294,8 @@ export default function Home() {
               className="group relative h-[450px] bg-neutral-50 border border-neutral-200 overflow-hidden hover:border-blue-500/50 transition-all duration-500 rounded-lg shadow-sm hover:shadow-xl"
             >
               <div className="absolute inset-0">
-                <Image
+                <ImageWithLoader
+                  containerClassName="absolute inset-0"
                   src="/images/service-pr.png"
                   alt="Public Relations"
                   fill
@@ -446,12 +324,146 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Industries We Serve Section */}
+      <section className="py-20 sm:py-24 px-4 md:px-8 bg-neutral-50 text-neutral-900 relative">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-6">
+            <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.9]">
+              INDUSTRIES
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                WE SERVE
+              </span>
+            </h2>
+            <p className="text-neutral-600 max-w-md text-sm sm:text-base md:text-lg leading-relaxed text-right md:text-left">
+              Tailored solutions for diverse sectors, driving efficiency and growth across the board.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Oil & Gas */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-oil-gas.png"
+                alt="Oil & Gas Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Users className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">OIL & GAS</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Comprehensive staffing and corporate gifting solutions for the energy sector.
+                </p>
+              </div>
+            </div>
+
+            {/* Government */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-government.png"
+                alt="Government Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Award className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">GOVERNMENT</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Supporting public sector organizations with tailored business solutions.
+                </p>
+              </div>
+            </div>
+
+            {/* Hospitality */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-hospitality.png"
+                alt="Hospitality Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Clock className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">HOSPITALITY</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Event management and premium products for hotels and restaurants.
+                </p>
+              </div>
+            </div>
+
+            {/* Banking */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-banking.png"
+                alt="Banking Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Shield className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">BANKING</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Executive staffing and corporate branding for financial institutions.
+                </p>
+              </div>
+            </div>
+
+            {/* Construction */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-construction.png"
+                alt="Construction Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Users className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">CONSTRUCTION</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Workforce solutions and safety equipment for construction companies.
+                </p>
+              </div>
+            </div>
+
+            {/* Retail */}
+            <div className="group relative h-[450px] rounded-lg overflow-hidden bg-white border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl">
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
+                src="/images/industry-retail.png"
+                alt="Retail Industry"
+                fill
+                className="object-cover opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+              <div className="relative h-full p-8 flex flex-col justify-end">
+                <Award className="w-10 h-10 text-blue-600 mb-6" />
+                <h3 className="text-3xl font-bold mb-3 tracking-tighter text-neutral-900">RETAIL</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  Promotional products and staffing support for retail businesses.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products Section */}
       {/* Featured Products Section */}
       <section className="py-20 sm:py-24 px-4 md:px-8 bg-neutral-50 text-neutral-900 relative">
         <div className="container mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4 animate-fadeIn">
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+            <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.9]">
               FEATURED
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -472,7 +484,8 @@ export default function Home() {
               href="/products"
               className="group relative col-span-1 lg:col-span-2 row-span-2 h-[600px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
             >
-              <Image
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
                 src="/images/product-tech.png"
                 alt="Technology Gifts"
                 fill
@@ -495,7 +508,8 @@ export default function Home() {
               href="/products"
               className="group relative h-[288px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
             >
-              <Image
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
                 src="/images/product-eco.png"
                 alt="Eco-friendly Gifts"
                 fill
@@ -520,7 +534,8 @@ export default function Home() {
               href="/products"
               className="group relative h-[288px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
             >
-              <Image
+              <ImageWithLoader
+                containerClassName="absolute inset-0"
                 src="/images/product-drinkware.png"
                 alt="Drinkware"
                 fill
@@ -715,7 +730,7 @@ export default function Home() {
           </h2>
 
           <div className="mb-12 bg-white p-8 md:p-12 rounded-xl overflow-hidden shadow-xl border border-neutral-100 animate-slideUp">
-            <Image
+            <ImageWithLoader
               src="/images/clients-logos.png"
               alt="Fortune Business Solutions Trusted Clients"
               width={1200}
