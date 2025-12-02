@@ -107,12 +107,9 @@ export default function ContactPage() {
             </div>
             <div className="relative animate-slideInRight">
               <div className="relative aspect-square max-w-md mx-auto lg:ml-auto">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
-                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
-                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90">
-                    <source src="/images/fortunevid.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <video autoPlay muted playsInline loop className="relative w-full h-full object-cover opacity-90">
+                  <source src="/images/fortunevid.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

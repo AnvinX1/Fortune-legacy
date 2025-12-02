@@ -87,13 +87,9 @@ export default function Home() {
             {/* Video Content */}
             <div className="relative animate-slideInRight flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg aspect-square">
-                {/* Glow behind video */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
-                <div className="relative w-full h-full bg-white border border-neutral-200 rounded-lg overflow-hidden shadow-2xl">
-                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
-                    <source src="/images/fortunevid.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <video autoPlay muted playsInline loop className="relative w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
+                  <source src="/images/fortunevid.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -707,12 +703,9 @@ export default function Home() {
 
             <div className="lg:col-span-5 flex items-center justify-center animate-slideInRight">
               <div className="relative w-full max-w-md aspect-square">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
-                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
-                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90">
-                    <source src="/images/fortunevid.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <video autoPlay muted playsInline loop className="relative w-full h-full object-cover opacity-90">
+                  <source src="/images/fortunevid.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

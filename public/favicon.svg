@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fortune Favicon">
+  <defs>
+    <linearGradient id="fortuneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B68FF" />
+      <stop offset="100%" stop-color="#8B33FF" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#fortuneGradient)" />
+  <path
+    d="M160 128h224v72H232v72h136v72H232v112h-72V128z"
+    fill="white"
+    opacity="0.94"
+  />
+</svg>
+

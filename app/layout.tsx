@@ -8,7 +8,12 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Fortune Business Solutions",
   description: "Leading provider of staffing solutions, company formation services, and event management in Oman, Bahrain, and India",
-    generator: 'v0.app'
+  generator: "v0.app",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg"
+  }
 }
 
 export default function RootLayout({

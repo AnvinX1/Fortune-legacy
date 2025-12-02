@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Instagram, Mail, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Instagram, Mail, CheckCircle2, Facebook, Youtube } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import CTA from "@/components/cta"
@@ -45,18 +45,15 @@ export default function SocialPage() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-neutral-600 max-w-xl leading-relaxed mb-8">
-                Follow our journey on Instagram, stay updated with the latest news, and connect with Fortune Business
+                Follow our journey across all social platforms, stay updated with the latest news, and connect with Fortune Business
                 Solutions.
               </p>
             </div>
             <div className="relative animate-slideInRight">
               <div className="relative aspect-square max-w-md mx-auto lg:ml-auto">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
-                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
-                  <video autoPlay muted playsInline loop className="w-full h-full object-cover opacity-90">
-                    <source src="/images/fortunevid.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <video autoPlay muted playsInline loop className="relative w-full h-full object-cover opacity-90">
+                  <source src="/images/fortunevid.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -73,53 +70,90 @@ export default function SocialPage() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {/* Large Instagram Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Large Instagram Card - Featured */}
             <a
               href="https://www.instagram.com/fortune_oman/"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:col-span-12 group relative bg-white border border-neutral-200 p-8 md:p-16 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
+              className="group relative col-span-1 lg:col-span-2 row-span-2 h-[600px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-                <div className="flex-1 text-center md:text-left">
-                  <Instagram className="h-16 w-16 md:h-24 md:w-24 mb-6 text-neutral-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-tr group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-600 transition-all duration-500 mx-auto md:mx-0" />
-                  <div className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-neutral-900">
-                    @fortune_oman
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 opacity-5 group-hover:opacity-10 transition-opacity duration-500" />
+              
+              <div className="relative h-full p-8 md:p-12 flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6 text-white shadow-lg shadow-purple-600/20">
+                    <Instagram className="h-8 w-8" />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tighter text-neutral-400 group-hover:text-neutral-600 transition-colors">
-                    INSTAGRAM
-                  </h3>
-                  <p className="text-base md:text-lg text-neutral-600 mb-8 leading-relaxed max-w-2xl">
-                    Discover our visual story. See our latest projects, team moments, corporate gifts, events, and
-                    behind-the-scenes content. Join our growing community and stay inspired with daily updates.
-                  </p>
-                  <div className="inline-flex items-center text-sm md:text-base uppercase tracking-widest font-bold text-blue-600 group-hover:translate-x-2 transition-transform">
-                    Follow @fortune_oman <ArrowRight className="ml-3 h-5 w-5" />
+                  <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
-                <div className="flex-shrink-0">
-                  <div className="grid grid-cols-2 gap-4">
-                    {["POST", "REEL", "STORY", "LIVE"].map((item, i) => (
-                      <div
-                        key={i}
-                        className={`w-24 h-24 md:w-32 md:h-32 rounded-xl flex items-center justify-center text-lg md:text-xl font-bold shadow-sm transition-transform duration-500 group-hover:scale-105 ${i % 2 === 0
-                          ? "bg-blue-600 text-white rotate-3 group-hover:rotate-6"
-                          : "bg-neutral-900 text-white -rotate-3 group-hover:-rotate-6"
-                          }`}
-                      >
-                        {item}
-                      </div>
-                    ))}
+                
+                <div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-neutral-900">
+                    @fortune_oman
                   </div>
+                  <h3 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter text-neutral-900">
+                    INSTAGRAM
+                  </h3>
+                  <p className="text-lg text-neutral-600 max-w-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    Discover our visual story. See our latest projects, team moments, corporate gifts, events, and behind-the-scenes content. Join our growing community and stay inspired with daily updates.
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            {/* Small Facebook Card */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61550640942940&sk=about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative h-[288px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative h-full p-8 flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                  <Facebook className="h-12 w-12 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 tracking-tighter text-neutral-900">FACEBOOK</h3>
+                  <p className="text-sm text-neutral-600">Connect & stay updated with company news</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Small YouTube Card */}
+            <a
+              href="https://youtube.com/@fortunebusiness-omr?si=EqCAl2F5fU_XJPBC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative h-[288px] bg-white rounded-lg overflow-hidden border border-neutral-200 hover:border-blue-500/50 transition-all duration-500 shadow-sm hover:shadow-xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-red-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative h-full p-8 flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                  <Youtube className="h-12 w-12 text-red-600 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 tracking-tighter text-neutral-900">YOUTUBE</h3>
+                  <p className="text-sm text-neutral-600">Watch videos & tutorials about our services</p>
                 </div>
               </div>
             </a>
           </div>
 
-          {/* Instagram Features */}
+          {/* Social Media Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               {
@@ -240,12 +274,9 @@ export default function SocialPage() {
             </div>
             <div className="lg:col-span-5 flex items-center justify-center animate-slideInRight">
               <div className="relative w-full aspect-square max-w-md">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 blur-[60px] opacity-20" />
-                <div className="relative w-full h-full bg-white rounded-2xl overflow-hidden border border-neutral-200 shadow-2xl">
-                  <video ref={videoRef} muted playsInline loop className="w-full h-full object-cover opacity-90">
-                    <source src="/images/fortunevid.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <video ref={videoRef} muted playsInline loop className="relative w-full h-full object-cover opacity-90">
+                  <source src="/images/fortunevid.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
