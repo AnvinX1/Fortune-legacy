@@ -3,7 +3,7 @@
 > **Your Trusted Partner for Staffing, Business Formation & Event Management**
 
 A modern, responsive corporate website built with Next.js 14, TypeScript, and clean design principles. Fortune Business Solutions specializes in staffing solutions, company formation services (Fortune PRO), and comprehensive event management across Oman, Bahrain, and India.
-
+fick
 ---
 
 ## 📺 Project Preview
