@@ -45,6 +45,22 @@ export default function Footer() {
                             >
                                 Instagram
                             </a>
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61550640942940&sk=about"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm uppercase tracking-widest text-neutral-600 hover:text-blue-600 transition-colors"
+                            >
+                                Facebook
+                            </a>
+                            <a
+                                href="https://youtube.com/@fortunebusiness-omr?si=EqCAl2F5fU_XJPBC"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm uppercase tracking-widest text-neutral-600 hover:text-blue-600 transition-colors"
+                            >
+                                YouTube
+                            </a>
                         </div>
                     </div>
                 </div>
